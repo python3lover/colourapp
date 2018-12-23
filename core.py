@@ -5,14 +5,14 @@ By:
 * Ken Shibata, Dec 2018
 '''
 
-import unpacker, validator, copier
+import unpack, validate, copy
 
 class core():
     def __init__(self):
         self.pack_path = None
     def _start(self, pack_path):
         self.pack_path = pack_path
-        unpacker_inst = unpacker.unpacker(self.pack_path)
+        unpacker_inst = unpacker.unpack(self.pack_path)
         unpacker_inst._find_format()
         unpacker_inst._unpack()
         validator_inst = validator.validate()
