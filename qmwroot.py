@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import *
 from qmwroot_ui import *
 import sys
 
-class QMWRoot(Ui_QMWRoot, QMainWindow):
+class QMWRoot(Ui_QMWRoot, QMainWindow): # TODO Add support for showing apps from ~/Apps.
     def __init__(self, QApp):
         super().__init__()
 
