@@ -1,43 +1,40 @@
-# ColourApp
-Fast way to get apps.
-
-## How Does ColourApp Work?
+# How Does ColourApp Work?
 
 `*` - Optional
 
 `_` - Required
 
-1. `*`**Downloads** the ColourApp from a server
+1. `*`**Downloads** the ColourApp from a server (Planned)
 2. `_`**Unpacks** the ColourApp from zip into a folder
 3. `*`**Validates** the ColourApp for errors
 4. `_`**Copies** the ColourApp source to `apps/...`
 
-## Modules
+# Modules
 
-### download.py (Planned)
+## download.py (Planned)
 
 Downloads ColourApps from servers.
 
-### unpack.py
+## unpack.py
 
 Unpackes ColourApp to `./unpacker_result`.
 
-### validate.py
+## validate.py
 
 Validates `app_data.json`. Validation of core script coming soon.
 
-### copy.py
+## copy.py
 
 Copies validated ColourApp contents to `/apps/...`
 
-### core.py
+## core.py
 
 Runs all the modules automatically.
 
-### gui.py (Planned)
+## gui.py (Planned)
 
 Simple GUI for ColourApp.
 
-### cli.py (Planned)
+## cli.py (Planned)
 
 Simple CLI for ColourApp.
