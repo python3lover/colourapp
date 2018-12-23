@@ -1,5 +1,5 @@
 '''
-ColourApp/unpacker.py
+ColourApp/unpack.py
 Unpackes archives/packs and puts them into a folder.
 By:
 * Ken Shibata, Dec 2018
@@ -7,7 +7,7 @@ By:
 
 import fleep, zipfile, os
 
-class unpacker():
+class unpack():
     def __init__(self, pack_path):
         self.pack_path = pack_path
         self.pack_format = ''
