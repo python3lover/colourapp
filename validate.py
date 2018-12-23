@@ -1,5 +1,5 @@
 '''
-ColourApp/validator.py
+ColourApp/validate.py
 Parses and validates the unpacked archive/pack
 By:
 * Ken Shibata, Dec 2018
