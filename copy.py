@@ -1,5 +1,5 @@
 '''
-ColourApp/copier.py
+ColourApp/copy.py
 Copies to destination directory.
 By:
 * Ken Shibata, Dec 2018
