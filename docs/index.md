@@ -7,7 +7,7 @@ Fast way to get apps.
 
 `_` - Required
 
-1. `*`**Downloads** the ColourApp from a server
+1. `*`**Downloads** the ColourApp from a server (Planned)
 2. `_`**Unpacks** the ColourApp from zip into a folder
 3. `*`**Validates** the ColourApp for errors
 4. `_`**Copies** the ColourApp source to `apps/...`
