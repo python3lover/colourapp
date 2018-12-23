@@ -8,14 +8,21 @@ By:
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from qmwroot_ui import *
+import sys
 
-def QMWRoot(Ui_QMWRoot, QMainWindow):
+class QMWRoot(Ui_QMWRoot, QMainWindow):
     def __init__(self, QApp):
         super().__init__()
 
         self.QApp = QApp
-    def setupUi(self):
+    def finalUi(self):
         self.setupUi(self)
     def startUi(self):
-        self.setupUi()
+        self.finalUi()
         self.show()
+
+if __name__ == '__main__':
+    QApp = QApplication(sys.argv)
+    QMWRootInst = QMWRoot(QApp)
+    QMWRootInst.startUi()
+    sys.exit(QApp.exec_())
