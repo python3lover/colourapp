@@ -21,9 +21,8 @@ class QMWRoot(Ui_QMWRoot, QMainWindow): # TODO Add support for showing apps from
         appsDir = os.path.join(os.path.userexpand(), 'Apps')
         old_wd = os.cwd()
         os.chdir(appsDir)
-        os.listdir()
-        os.chdir(old_wd)
-
+        apps = os.listdir()
+        os.chdir(old_wd)# TODO Get app details.
     def startUi(self):
         self.finalUi()
         self.show()
