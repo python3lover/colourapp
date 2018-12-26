@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-12-23T04:03:57
+# Project created by QtCreator 2018-12-26T17:55:35
 #
 #-------------------------------------------------
 
@@ -32,7 +32,8 @@ HEADERS += \
         qmwroot.h
 
 FORMS += \
-        qmwroot.ui
+        qmwroot.ui \
+    qdlgaboutapp.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
