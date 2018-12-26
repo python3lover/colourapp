@@ -5,7 +5,7 @@ By:
 * Ken Shibata, Dec 2018
 '''
 
-import fleep, zipfile, os
+import zipfile, os#, fleep
 
 class unpack():
     def __init__(self, pack_path):
@@ -28,6 +28,7 @@ class unpack():
             exit(1)
     def _unpack(self):
         print('Info  Unpacking...')
+        self.pack_format = ['zip']
         if 'zip' in self.pack_format:
             with zipfile.ZipFile(self.pack_path, 'r') as zip_ref:
                 zip_ref.extractall(self.unpack_dir)
@@ -40,5 +41,5 @@ class unpack():
 if __name__ == '__main__':
     pack_path = input('Input Pack Path ')
     unpack = unpacker(pack_path)
-    unpack._find_format()
+    # unpack._find_format()
     unpack._unpack()

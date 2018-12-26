@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import *
 from qdlgaboutapp_ui import *
 import os, sys, files
 
-class QMWRoot(Ui_QDlgAboutApp, QDialog):
+class QDlgAboutApp(Ui_QDlgAboutApp, QDialog):
     def __init__(self, QApp):
         super().__init__()
 
@@ -20,6 +20,11 @@ class QMWRoot(Ui_QDlgAboutApp, QDialog):
     def startUi(self):
         self.finalUi()
         self.show()
+
+def auto(QApp):
+    QDlgAboutAppInst = QDlgAboutApp(QApp)
+    QDlgAboutAppInst.startUi()
+    return QDlgAboutAppInst
 
 if __name__ == '__main__':
     QApp = QApplication(sys.argv)
