@@ -21,7 +21,12 @@ class QMWRoot(Ui_QMWRoot, QMainWindow):
         appsDir = os.path.expanduser('~/Apps')
         tree = files.list_files(appsDir)
         print(tree)
-        self.QLWApps.addItems(files.tree_to_path(tree))
+        items = files.tree_to_path(tree)
+        print(items)
+        for i in range(len(items[0])):
+            QLWIItem = QListWidgetItem(items[0][i])
+            QLWIItem.setToolTip(items[1][i])
+            self.QLWApps.addItem(QLWIItem)
     def startUi(self):
         self.finalUi()
         self.updateUiLoadApps()

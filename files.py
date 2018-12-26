@@ -30,6 +30,7 @@ def list_files(path):
 
 def tree_to_path(tree):
     path = []
+    path_to_appdata = []
     apps = list(tree.keys())
     for app in apps:
         edns = list(tree[app].keys())
@@ -40,8 +41,8 @@ def tree_to_path(tree):
                 for chl in chls:
                     lngs = list(tree[app][edn][ver][chl].keys())
                     for lng in lngs:
-                        path_to_appdata = os.path.expanduser('~/Apps/{}/{}/{}/{}/{}/app_data.json'.format(app, edn, ver, chl, lng))
-                        appdata = json.load(open(path_to_appdata))
+                        path_to_appdata.append(os.path.expanduser('~/Apps/{}/{}/{}/{}/{}/app_data.json'.format(app, edn, ver, chl, lng)))
+                        appdata = json.load(open(path_to_appdata[-1]))
                         nam = appdata['name']
                         path.append('{nam} {edn} {ver} {chl} ({lng})'.format(nam=nam, app=app, edn=edn, ver=ver, chl=chl, lng=lng))
-    return path
+    return path, path_to_appdata
