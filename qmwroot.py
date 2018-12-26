@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import *
 from qmwroot_ui import *
 import os, sys, files
 
-class QMWRoot(Ui_QMWRoot, QMainWindow): # TODO Add support for showing apps from ~/Apps.
+class QMWRoot(Ui_QMWRoot, QMainWindow):
     def __init__(self, QApp):
         super().__init__()
 
@@ -18,11 +18,13 @@ class QMWRoot(Ui_QMWRoot, QMainWindow): # TODO Add support for showing apps from
     def finalUi(self):
         self.setupUi(self)
     def updateUiLoadApps(self):
-        appsDir = os.path.join(os.path.userexpand(), 'Apps')# TODO Get app details.
+        appsDir = os.path.expanduser('~/Apps')
         tree = files.list_files(appsDir)
-        #apps =
+        print(tree)
+        self.QLWApps.addItems(files.tree_to_path(tree))
     def startUi(self):
         self.finalUi()
+        self.updateUiLoadApps()
         self.show()
 
 if __name__ == '__main__':
