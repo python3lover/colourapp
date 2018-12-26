@@ -19,7 +19,7 @@ class QDlgAboutApp(Ui_QDlgAboutApp, QDialog):
         self.setupUi(self)
     def startUi(self):
         self.finalUi()
-        self.show()
+        self.exec_()
 
 def auto(QApp):
     QDlgAboutAppInst = QDlgAboutApp(QApp)
