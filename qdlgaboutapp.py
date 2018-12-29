@@ -1,6 +1,6 @@
 '''
 ColourApp/qdlgaboutapp.py
-QDlgAboutApp
+QDlgGetURL
 By:
 * Ken Shibata, Dec 2018
 '''

@@ -9,6 +9,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from qmwroot_ui import *
 from qdlgaboutapp import *
+from qdlggeturl import *
 import core
 import os, sys, files
 
@@ -20,12 +21,21 @@ class QMWRoot(Ui_QMWRoot, QMainWindow):
     def finalUi(self):
         self.setupUi(self)
         self.QActAboutApp.triggered.connect(self.updateUiAboutApp)
-        self.QActAuto.triggered.connect(core.auto)
-    def updateUiAboutApp(self):# TODO Fix bug: QDlgAboutApp ot appearing
+        self.QActAuto.triggered.connect(self.updateUiAppAuto())
+    def updateUiAboutApp(self):
         print('updateUiAboutApp')
         Inst = QDlgAboutApp(self.QApp)
         Inst.startUi()
         print('done')
+    def updateUiGetURL(self):
+        print('updateUiGetURL')
+        Inst = QDlgAboutApp(self.QApp)
+        Inst.startUi()
+        print('done')
+    def updateUiAppAuto(self):
+        Inst = QDlgGetURL(self.QApp)
+        pack_path = Inst.startUi()
+        core.auto(pack_path)
     def updateUiLoadApps(self):
         appsDir = os.path.expanduser('~/Apps')
         tree = files.list_files(appsDir)

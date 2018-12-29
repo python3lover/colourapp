@@ -33,7 +33,8 @@ HEADERS += \
 
 FORMS += \
         qmwroot.ui \
-    qdlgaboutapp.ui
+    qdlgaboutapp.ui \
+    qdlggeturl.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

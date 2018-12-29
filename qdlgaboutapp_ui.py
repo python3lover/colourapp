@@ -10,7 +10,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_QDlgAboutApp(object):
     def setupUi(self, QDlgAboutApp):
-        QDlgAboutApp.setObjectName("QDlgAboutApp")
+        QDlgAboutApp.setObjectName("QDlgGetURL")
         QDlgAboutApp.resize(400, 300)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(QDlgAboutApp)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -44,9 +44,9 @@ class Ui_QDlgAboutApp(object):
 
     def retranslateUi(self, QDlgAboutApp):
         _translate = QtCore.QCoreApplication.translate
-        QDlgAboutApp.setWindowTitle(_translate("QDlgAboutApp", "Dialog"))
-        self.QLbTitle.setText(_translate("QDlgAboutApp", "About ColourApp"))
-        self.QLbName.setText(_translate("QDlgAboutApp", "ColourApp"))
-        self.QLbInfo.setText(_translate("QDlgAboutApp", "GUI 0.0.0 Stable en-ca"))
-        self.QLbLicense.setText(_translate("QDlgAboutApp", "<html><head/><body><p>ColourApp is licensed under the <a href=\"https://colourroot.github.io/License/\"><span style=\" text-decoration: underline; color:#0000ff;\">MIT License</span></a>.</p></body></html>"))
+        QDlgAboutApp.setWindowTitle(_translate("QDlgGetURL", "Dialog"))
+        self.QLbTitle.setText(_translate("QDlgGetURL", "About ColourApp"))
+        self.QLbName.setText(_translate("QDlgGetURL", "ColourApp"))
+        self.QLbInfo.setText(_translate("QDlgGetURL", "GUI 0.0.0 Stable en-ca"))
+        self.QLbLicense.setText(_translate("QDlgGetURL", "<html><head/><body><p>ColourApp is licensed under the <a href=\"https://colourroot.github.io/License/\"><span style=\" text-decoration: underline; color:#0000ff;\">MIT License</span></a>.</p></body></html>"))
 
