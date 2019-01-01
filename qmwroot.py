@@ -37,7 +37,7 @@ class QMWRoot(Ui_QMWRoot, QMainWindow):
         pack_url, pack_path = Inst.startUi()
         request = requests.get(pack_url)
         r = requests.get(pack_url)
-        file = open(pack_path)
+        file = open(pack_path, mode='w')
         file.write(io.BytesIO(r.content))
         file.close()
         core.auto(pack_path)
