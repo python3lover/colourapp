@@ -45,6 +45,9 @@
       <widget class="QLineEdit" name="QLEURL"/>
      </item>
      <item>
+      <widget class="QLineEdit" name="QLEPath"/>
+     </item>
+     <item>
       <spacer name="QVSRoot">
        <property name="orientation">
         <enum>Qt::Vertical</enum>

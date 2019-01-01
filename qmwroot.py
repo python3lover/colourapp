@@ -11,7 +11,7 @@ from qmwroot_ui import *
 from qdlgaboutapp import *
 from qdlggeturl import *
 import core
-import os, sys, files
+import os, sys, files, requests, io, zipfile
 
 class QMWRoot(Ui_QMWRoot, QMainWindow):
     def __init__(self, QApp):
@@ -21,7 +21,7 @@ class QMWRoot(Ui_QMWRoot, QMainWindow):
     def finalUi(self):
         self.setupUi(self)
         self.QActAboutApp.triggered.connect(self.updateUiAboutApp)
-        self.QActAuto.triggered.connect(self.updateUiAppAuto())
+        self.QActAuto.triggered.connect(self.updateUiAppAuto)
     def updateUiAboutApp(self):
         print('updateUiAboutApp')
         Inst = QDlgAboutApp(self.QApp)
@@ -34,7 +34,12 @@ class QMWRoot(Ui_QMWRoot, QMainWindow):
         print('done')
     def updateUiAppAuto(self):
         Inst = QDlgGetURL(self.QApp)
-        pack_path = Inst.startUi()
+        pack_url, pack_path = Inst.startUi()
+        request = requests.get(pack_url)
+        r = requests.get(pack_url)
+        file = open(pack_path)
+        file.write(io.BytesIO(r.content))
+        file.close()
         core.auto(pack_path)
     def updateUiLoadApps(self):
         appsDir = os.path.expanduser('~/Apps')
