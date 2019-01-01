@@ -1,0 +1,15 @@
+{"name": "ColourApp",
+"desc": "Fast way to get apps.",
+"icons": {},
+"id": "colour_app",
+"uuid": "333c501f-91db-44b5-b57b-87193da558be",
+"ver": "0.0.0",
+"edition": "Basic",
+"language": ["en", "ca"],
+"ver_name": null,
+"channel": "stable",
+"build": 0,
+"ver_string": "Ver 0.0.0 Stable",
+"ver_build_string": "Ver 0.3.0 Stable (Build 0)",
+"dependencies": ["python<=3.4.0", "pyqt<=5.6.0"]
+}
