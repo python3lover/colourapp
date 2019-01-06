@@ -42,10 +42,18 @@
       </layout>
      </item>
      <item>
-      <widget class="QLineEdit" name="QLEURL"/>
+      <widget class="QLineEdit" name="QLEURL">
+       <property name="placeholderText">
+        <string>URL</string>
+       </property>
+      </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="QLEPath"/>
+      <widget class="QLineEdit" name="QLEPath">
+       <property name="placeholderText">
+        <string>Path</string>
+       </property>
+      </widget>
      </item>
      <item>
       <spacer name="QVSRoot">
