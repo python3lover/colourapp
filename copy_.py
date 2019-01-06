@@ -19,7 +19,8 @@ class copy():
         try:
             shutil.copytree(self.unpacker_result_path, self.destination_path)
         except FileExistsError:
-            print('Info  File exists, exiting w/ code 0.')
+            print('Info  File exists, exiting w/ code 1...')
+            exit(1)
         else:
             print('Info  Done.')
 
