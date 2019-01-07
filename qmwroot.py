@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import *
 from qmwroot_ui import *
 from qdlgaboutapp import *
 from qdlggeturl import *
-import core
+import core, download
 import os, sys, files, requests, io, zipfile
 
 class QMWRoot(Ui_QMWRoot, QMainWindow):
@@ -35,15 +35,15 @@ class QMWRoot(Ui_QMWRoot, QMainWindow):
     def updateUiAppAuto(self):
         Inst = QDlgGetURL(self.QApp)
         pack_url, pack_path = Inst.startUi()
-        request = requests.get(pack_url)
-        r = requests.get(pack_url)
-        file = open(pack_path, mode='w')
-        file.write(io.BytesIO(r.content))
-        file.close()
+        DInst = download.download(pack_url, pack_path)
+        DInst.download()
         core.auto(pack_path)
     def updateUiLoadApps(self):
         appsDir = os.path.expanduser('~/Apps')
-        tree = files.list_files(appsDir)
+        try:
+            tree = files.list_files(appsDir)
+        except:
+            return ['~/Apps not Found', 'ColourApp is not properly set in your system. Please create a directory called "~/Apps".']
         print(tree)
         items = files.tree_to_path(tree)
         print(items)
@@ -51,9 +51,15 @@ class QMWRoot(Ui_QMWRoot, QMainWindow):
             QLWIItem = QListWidgetItem(items[0][i])
             QLWIItem.setToolTip(items[1][i])
             self.QLWApps.addItem(QLWIItem)
+        return None
+    def updateUiError(self, title, message):
+        Inst = QMessageBox.critical(self, title, message, QMessageBox.Abort)
+        Inst.show()
     def startUi(self):
         self.finalUi()
-        self.updateUiLoadApps()
+        code = self.updateUiLoadApps()
+        if not code:
+            self.updateUiError(*code)
         self.show()
 
 if __name__ == '__main__':

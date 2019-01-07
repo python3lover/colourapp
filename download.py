@@ -12,6 +12,8 @@ class download():
         self.source_url = source_url
         self.save_path  = save_path
     def download(self):
+        with urllib.request.urlopen(source_url) as response:
+            html = response.retrieve
         testfile = urllib.URLopener()
         testfile.retrieve(self.source_url, self.save_path)
 
