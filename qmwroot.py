@@ -58,7 +58,7 @@ class QMWRoot(Ui_QMWRoot, QMainWindow):
     def startUi(self):
         self.finalUi()
         code = self.updateUiLoadApps()
-        if not code:
+        if code != None:
             self.updateUiError(*code)
         self.show()
 

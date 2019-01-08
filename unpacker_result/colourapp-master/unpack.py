@@ -38,10 +38,7 @@ class unpack():
         if len(list(os.listdir('./{}'.format(self.unpack_dir_raw)))) == 1:
             shutil.copytree(self.unpacker_dir_raw, self.unpack_dir)
             os.rmdir(self.unpack_dir_raw)
-        # old_wd = os.cwd()
-        # os.chdir(self.unpack_dir)
         # TODO Move file contents of dir if there is only one dir inside unpacker_result
-        # os.chdir(old_wd)
         print('Info  Done. Results in {}.'.format(self.unpack_dir))
 
 if __name__ == '__main__':

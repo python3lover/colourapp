@@ -5,17 +5,19 @@ By:
 * Ken Shibata, Dec 2018
 '''
 
-import urllib
+# import urllib
+import wget
 
 class download():
     def __init__(self, source_url, save_path):
         self.source_url = source_url
         self.save_path  = save_path
     def download(self):
-        with urllib.request.urlopen(source_url) as response:
-            html = response.retrieve
-        testfile = urllib.URLopener()
-        testfile.retrieve(self.source_url, self.save_path)
+        wget.download(self.source_url, self.save_path)
+        # with urllib.request.urlopen(self.source_url) as response:
+            # html = response.retrieve
+        # testfile = urllib.URLopener()
+        # testfile.retrieve(self.source_url, self.save_path)
 
 if __name__ == '__main__':
     print('      ColourApp/download.py')
