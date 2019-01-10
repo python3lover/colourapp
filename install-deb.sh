@@ -10,6 +10,12 @@ sleep 7s
 echo "Installation will start in 3s. Press Ctrl+C to stop."
 sleep 3s
 
+if [ "$EUID" != 0 ]
+  then
+  echo "Not running as root, please run as root. (Exit code 0 or 128)"
+  exit 128
+fi
+
 echo "Section 1/4.  Install dependencies."
 echo "Step    1/11. Install Qt5, Python3, PyQt5, Python 3 wget, Python 3 pip."
 sudo apt-get install -y qt5-default python3 python3-pyqt5 python3-wget python3-pip | /dev/null
