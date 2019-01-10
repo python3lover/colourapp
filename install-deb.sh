@@ -8,7 +8,7 @@ if [ "$EUID" != 0 ]
   exit 128
 fi
 
-echo "ColourApp Installer for Debian Rev 1"
+echo "ColourApp Installer for Debian Rev 2"
 echo "This program installs ColourApp onto your system."
 echo "ColourApp is available on GitHub: github.com/colourroot/colourapp"
 echo "A temporary installation directory will be made as ~/capp-temp-install. This directory will be removed after installation."
@@ -19,15 +19,15 @@ sleep 3s
 
 echo "Section 1/4.  Install dependencies."
 echo "Step    1/11. Install Qt5, Python3, PyQt5, Python 3 wget, Python 3 pip."
-sudo apt-get install -y qt5-default python3 python3-pyqt5 python3-wget python3-pip | capp-install-debug.txt
+sudo apt-get install -y qt5-default python3 python3-pyqt5 python3-wget python3-pip > capp-install-debug.txt
 
 echo "Section 2/4.  Prepare, download, unzip."
 echo "Step    2/11. Create ~/capp-temp-install."
 mkdir ~/capp-temp-install
 echo "Step    3/11. Get ColourApp source from GitHub."
-wget https://github.com/colourroot/colourapp/archive/master.zip -O ~/capp-temp-install/source.zip | capp-install-debug.txt
+wget https://github.com/colourroot/colourapp/archive/master.zip -O ~/capp-temp-install/source.zip > capp-install-debug.txt
 echo "Step    4/11. Unzip source."
-unzip ~/capp-temp-install/source.zip -d ~/capp-temp-install/source | capp-install-debug.txt
+unzip ~/capp-temp-install/source.zip -d ~/capp-temp-install/source > capp-install-debug.txt
 
 echo "Section 3/4.  Move, set PATH."
 echo "Step    5/10. Create /opt/colourroot/colourapp."
