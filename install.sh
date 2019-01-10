@@ -24,7 +24,8 @@ echo "Section 3/4.  Move, set PATH."
 echo "Step    5/10. Create /opt/colourroot/colourapp."
 mkdir -p /opt/colourroot/colourapp
 echo "Step    6/10. Move source to /opt/colourroot/colourapp."
-mv ~/capp-temp-install/source /opt/colourroot/colourapp
+mv ~/capp-temp-install/source/colourapp-master /opt/colourroot/colourapp
+mv /opt/colourroot/colourapp/colourapp-master /opt/colourroot/colourapp
 echo "Step    7/10. Touch ~/.colourroot_profile."
 touch ~/.colourroot_profile
 echo "Step    8/10. Enter PATH to ~/.colourroot_profile."
