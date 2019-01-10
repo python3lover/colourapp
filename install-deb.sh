@@ -33,7 +33,7 @@ echo "Section 3/4.  Move, set PATH."
 echo "Step    5/10. Create /opt/colourroot/colourapp."
 mkdir -p /opt/colourroot/colourapp
 echo "Step    6/11. Move source to /opt/colourroot/colourapp."
-mv ~/capp-temp-install/source/colourapp-master /opt/colourroot/colourapp
+mv ~/capp-temp-install/source/colourapp-master/* /opt/colourroot/colourapp
 echo "Step    7/11. Remove ~/capp-temp-install."
 rm -r ~/capp-temp-install
 mv /opt/colourroot/colourapp/colourapp-master /opt/colourroot/colourapp
