@@ -1,6 +1,13 @@
 #!/bin/bash
 
 echo ""
+
+if [ "$EUID" != 0 ]
+  then
+  echo "Not running as root, please run as root. (Exit code 0 or 128)"
+  exit 128
+fi
+
 echo "ColourApp Installer for Debian"
 echo "This program installs ColourApp onto your system."
 echo "ColourApp is available on GitHub: github.com/colourroot/colourapp"
@@ -9,12 +16,6 @@ echo "Installation will start in 10s. Press Ctrl+C to stop."
 sleep 7s
 echo "Installation will start in 3s. Press Ctrl+C to stop."
 sleep 3s
-
-if [ "$EUID" != 0 ]
-  then
-  echo "Not running as root, please run as root. (Exit code 0 or 128)"
-  exit 128
-fi
 
 echo "Section 1/4.  Install dependencies."
 echo "Step    1/11. Install Qt5, Python3, PyQt5, Python 3 wget, Python 3 pip."
