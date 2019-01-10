@@ -18,6 +18,7 @@ echo "Installation will start in 3s. Press Ctrl+C to stop."
 sleep 3s
 
 echo "Section 0/4.  Install dependencies for installer. Installs: wget"
+sudo apt install -y wget
 
 echo "Section 1/4.  Install dependencies."
 echo "Step    1/11. Install Qt5, Python3, PyQt5, Python 3 wget, Python 3 pip."
