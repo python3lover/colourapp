@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo ""
+echo "ColourApp Installer for Debian"
 echo "This program installs ColourApp onto your system."
 echo "ColourApp is available on GitHub: github.com/colourroot/colourapp"
 echo "A temporary installation directory will be made as ~/capp-temp-install. This directory will be removed after installation."
