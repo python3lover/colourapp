@@ -10,15 +10,15 @@ sleep 3s
 
 echo "Section 1/4.  Install dependencies."
 echo "Step    1/11. Install Qt5, Python3, PyQt5, Python 3 wget, Python 3 pip."
-sudo apt-get install -y qt5-default python3 python3-pyqt5 python3-wget python3-pip
+sudo apt-get install -y qt5-default python3 python3-pyqt5 python3-wget python3-pip | /dev/null
 
 echo "Section 2/4.  Prepare, download, unzip."
 echo "Step    2/10. Create ~/capp-temp-install."
 mkdir ~/capp-temp-install
 echo "Step    3/10. Get ColourApp source from GitHub."
-wget https://github.com/colourroot/colourapp/archive/master.zip -O ~/capp-temp-install/source.zip
+wget https://github.com/colourroot/colourapp/archive/master.zip -O ~/capp-temp-install/source.zip | /dev/null
 echo "Step    4/10. Unzip source."
-unzip ~/capp-temp-install/source.zip -d ~/capp-temp-install/source
+unzip ~/capp-temp-install/source.zip -d ~/capp-temp-install/source | /dev/null
 
 echo "Section 3/4.  Move, set PATH."
 echo "Step    5/10. Create /opt/colourroot/colourapp."
